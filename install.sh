@@ -5,6 +5,8 @@ echo "Start Install..."
 
 read -sp "Input Password from GitHub Webhook: " passwd
 
+echo
+
 read -p "Input repository path from home folder: " repoName
 
 export GITHUB_PASSWD=passwd
