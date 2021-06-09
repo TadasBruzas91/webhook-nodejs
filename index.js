@@ -1,7 +1,7 @@
-const secret = "password";
+const secret = "password"; // Password from GitHub Webhook
 const dir = "code/crypto-prices";
 const homeDir = process.env.HOME;
-const repo = `${homeDir}/${dir}`;
+const repo = `${homeDir}/${dir}`; // Repository path
 
 const http = require("http");
 const crypto = require("crypto");

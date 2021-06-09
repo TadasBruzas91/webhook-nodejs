@@ -1,17 +1,9 @@
 #!/bin/bash
 #!/usr/bin/bash
 
+set -e # If error kill script
+
 echo "Start Install..."
-
-read -sp "Input Password from GitHub Webhook: " passwd
-
-echo
-
-read -p "Input repository path from home folder: " repoName
-
-export GITHUB_PASSWD=passwd
-
-export PROJECT_DIR=repoName
 
 mkdir $HOME services && echo "Dir created" || echo "Dir exists"
 

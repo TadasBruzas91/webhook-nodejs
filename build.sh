@@ -3,7 +3,7 @@
 
 set -e
 
-cd $HOME/code/crypto-prices
+cd $HOME/code/crypto-prices # Repository path
 
 yarn install
 
