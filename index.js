@@ -1,11 +1,12 @@
-const secret = process.env.GITHUB_PASSWD;
-const dir = process.env.PROJECT_DIR;
+const secret = "password";
+const dir = "code/crypto-prices";
 const homeDir = process.env.HOME;
 const repo = `${homeDir}/${dir}`;
 
 const http = require("http");
 const crypto = require("crypto");
 const exec = require("child_process").exec;
+const port = 8080;
 
 http
   .createServer(function (req, res) {
@@ -18,13 +19,12 @@ http
           .digest("hex");
 
       if (req.headers["x-hub-signature"] == sig) {
-        exec("cd " + repo + " && git pull");
-        exec(`cd ${homeDir}/services/webhook-nodejs`);
-        exec(`./build.sh`);
+        exec(
+          `cd ${repo} && git pull && cd ${homeDir}/services/webhook-nodejs && ./build.sh && echo Last build - $(date) >> gitLog.txt`
+        );
       }
     });
 
     res.end();
   })
-  .listen(8080);
-console.log(secret);
+  .listen(port);

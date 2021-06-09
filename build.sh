@@ -1,7 +1,9 @@
 #!/bin/bash
 #!/usr/bin/bash
 
-cd $HOME/$PROJECT_DIR
+set -e
+
+cd $HOME/code/crypto-prices
 
 yarn install
 
