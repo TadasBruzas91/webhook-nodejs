@@ -3,7 +3,7 @@
 
 set -e
 
-cd $HOME/code/crypto-prices # Repository path
+cd $HOME/cproject/directory # Repository path
 
 yarn install
 
